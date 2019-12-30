@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="LocadoraDeCarros.jnlp">
+  <information>
+    <title>LocadoraDeCarros</title>
+    <vendor>MaryR</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="LocadoraDeCarros.jar" size="7837" download="eager" />
+    <jar href="lib\commons-beanutils-1.9.4.jar" size="246918" download="eager" />
+    <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
+    <jar href="lib\commons-lang3-3.9.jar" size="503880" download="eager" />
+    <jar href="lib\opencsv-5.0.jar" size="199929" download="eager" />
+    <jar href="lib\org-apache-commons-logging.jar" size="60786" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="LocadoraDeCarros" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="com.settingsbar.MainTesteJanela"  name="LocadoraDeCarros" />
+  <update check="always"/>
+</jnlp>
