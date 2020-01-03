@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="LocadoraDeCarros.jar" size="7837" download="eager" />
+    <jar href="LocadoraDeCarros.jar" size="7472" download="eager" />
     <jar href="lib\commons-beanutils-1.9.4.jar" size="246918" download="eager" />
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\commons-lang3-3.9.jar" size="503880" download="eager" />
@@ -18,6 +18,6 @@
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="LocadoraDeCarros" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="com.settingsbar.MainTesteJanela"  name="LocadoraDeCarros" />
+  <jfx:javafx-desc  width="800" height="600" main-class="controller.MainCadastro"  name="LocadoraDeCarros" />
   <update check="always"/>
 </jnlp>

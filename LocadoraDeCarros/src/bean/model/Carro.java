@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package bean.model;
 
 import java.time.Year;
 import java.util.Calendar;
@@ -20,6 +20,7 @@ public class Carro {
     String modelo;
     String chassi;
     String proprietario;
+    Calendar dataDaCompra;
     String caminhoDoArquivo = "C:\\Users\\MaryR\\OneDrive\\Documentos\\NetBeansProjects\\LocadoraDeCarros\\src\\com\\dados\\DadosCarro.csv";
 
     public String getPlaca() {
@@ -78,6 +79,14 @@ public class Carro {
         this.proprietario = proprietario;
     }
 
+    public Calendar getDataDaCompra() {
+        return dataDaCompra;
+    }
+
+    public void setDataDaCompra(Calendar dataDaCompra) {
+        this.dataDaCompra = dataDaCompra;
+    }
+    
     public String getCaminhoDoArquivo() {
         return caminhoDoArquivo;
     }

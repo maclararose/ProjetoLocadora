@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/MaryR/OneDrive/Documentos/NetBeansProjects/LocadoraDeCarros/src/controller/MenuTeste.java</file>
-            <file>file:/C:/Users/MaryR/OneDrive/Documentos/NetBeansProjects/LocadoraDeCarros/src/controller/ManipuladorDeArquivo.java</file>
-            <file>file:/C:/Users/MaryR/OneDrive/Documentos/NetBeansProjects/LocadoraDeCarros/src/model/Carro.java</file>
+            <file>file:/C:/Users/MaryR/OneDrive/Documentos/NetBeansProjects/LocadoraDeCarros/src/controller/FXMLBarController.java</file>
+            <file>file:/C:/Users/MaryR/OneDrive/Documentos/NetBeansProjects/LocadoraDeCarros/src/controller/FXMLBar.fxml</file>
+            <file>file:/C:/Users/MaryR/OneDrive/Documentos/NetBeansProjects/LocadoraDeCarros/src/controller/MainCadastro.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,9 +1,7 @@
 package controller;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
@@ -11,23 +9,19 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
-import model.Carro;
+import bean.model.Carro;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvException;
 import java.io.PrintWriter;
-import java.time.Year;
-import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ManipuladorDeArquivo {
     public static void escreveNoArquivoCSV(String parametro, String caminhoDoArquivo) {
         try {
+  		
             FileWriter fw = new FileWriter(caminhoDoArquivo, true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
@@ -39,7 +33,7 @@ public class ManipuladorDeArquivo {
             System.out.println("Salvo!");
 
         }catch(Exception e) {
-  			System.out.println("Erro ao gravar chamado" + e.getMessage());
+            System.out.println("Erro ao gravar chamado" + e.getMessage());
         }
     }
 	
