@@ -267,27 +267,50 @@ public class alterarDados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Carro carro = new Carro();
+        CarroDAO dao = new CarroDAO();
         
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
+        try {
+            Date data = formato.parse("23/11/2015");
+        } catch (ParseException ex) {
+            Logger.getLogger(Cadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        carro.setPlaca(txtPlaca.getText());
+        carro.setAnoCarro(Integer.parseInt(txtAno.getText()));
+        carro.setCor(txtCor.getText());
+        carro.setMarca(txtMarca.getText());
+        carro.setModelo(txtModelo.getText());
+        carro.setChassi(txtChassi.getText());
+        carro.setProprietario(txtProprietario.getText());
+        carro.setDataDaCompra(dpDataCompra.getDate());
+        
+        try {
+            dao.update(carro);
+        } catch (SQLException ex) {
+            Logger.getLogger(alterarDados.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         Carro carro = new Carro();
         CarroDAO dao = new CarroDAO();
-        List <Carro> listagem = new ArrayList<>();
-        
+       
         try {
-            listagem = dao.returnListCar();
-            txtPlaca.setText(carro.getPlaca());
-            txtAno.setText(Integer.toString(carro.getAnoCarro()));
-            txtCor.setText(carro.getCor());
-            txtMarca.setText(carro.getMarca());
-            txtModelo.setText(carro.getModelo());
-            txtChassi.setText(carro.getChassi());
-            txtProprietario.setText(carro.getProprietario());
-            dpDataCompra.setDate(carro.getDataDaCompra());
+            carro = dao.returnCar(txtConsulta.getText());
         } catch (SQLException ex) {
-            System.out.println("NÃO FOI POSSIVEL RECUPERAR DADOS: "+ex);
+            Logger.getLogger(alterarDados.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        txtPlaca.setText(carro.getPlaca());
+        txtAno.setText(Integer.toString(carro.getAnoCarro()));
+        txtCor.setText(carro.getCor());
+        txtMarca.setText(carro.getMarca());
+        txtModelo.setText(carro.getModelo());
+        txtChassi.setText(carro.getChassi());
+        txtProprietario.setText(carro.getProprietario());
+        dpDataCompra.setDate(carro.getDataDaCompra());
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
         try {
             Date data = formato.parse("23/11/2015");
