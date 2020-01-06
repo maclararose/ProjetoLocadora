@@ -16,7 +16,7 @@ public class Carro {
     private String placa;
     private int anoCarro;
     private String cor;
-    private String marcar;
+    private String marca;
     private String modelo;
     private String chassi;
     private String proprietario;
@@ -54,12 +54,12 @@ public class Carro {
         this.cor = cor;
     }
 
-    public String getMarcar() {
-        return marcar;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setMarcar(String marcar) {
-        this.marcar = marcar;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     public String getModelo() {

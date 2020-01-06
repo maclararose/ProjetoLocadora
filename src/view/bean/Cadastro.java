@@ -281,7 +281,7 @@ public class Cadastro extends javax.swing.JFrame {
         carro.setPlaca(txtPlaca.getText());
         carro.setAnoCarro(Integer.parseInt(txtAno.getText()));
         carro.setCor(txtCor.getText());
-        carro.setMarcar(txtMarca.getText());
+        carro.setMarca(txtMarca.getText());
         carro.setModelo(txtModelo.getText());
         carro.setChassi(txtChassi.getText());
         carro.setProprietario(txtProprietario.getText());
