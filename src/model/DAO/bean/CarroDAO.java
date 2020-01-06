@@ -46,18 +46,21 @@ public class CarroDAO {
         }
     }
     
-    public ArrayList<Carro> returnListCar() throws SQLException{
-        String sql = "SELECT * FROM carro WHERE placa='?'";
+    public Carro returnCar(String placa) throws SQLException{
+        String sql = "SELECT * FROM carro WHERE placa=(?)";
         
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
+        
+        stmt = con.prepareStatement(sql);
+        
+        stmt.setString(1, placa);
+        
         ResultSet rs = stmt.executeQuery();
         
-        ArrayList<Carro> listaCarro = new ArrayList<>();
+        Carro carro = new Carro();
         
         while(rs.next()){
-            Carro carro = new Carro();
-            
             carro.setPlaca(rs.getString("placa"));
             carro.setAnoCarro(rs.getInt("dataCarro"));
             carro.setCor(rs.getString("cor"));
@@ -66,23 +69,19 @@ public class CarroDAO {
             carro.setChassi(rs.getString("chassi"));
             carro.setProprietario(rs.getString("proprietario"));
             carro.setDataDaCompra(rs.getDate("dataCompra"));
-            
-            listaCarro.add(carro);
         }
         stmt.close();
         
-        return listaCarro;
+        return carro;
     }
     
-    public void update() throws SQLException{
-        String sql = "UPDATE carro SET placa = '?',dataCarro='?',cor='?',"
-                + "marca='?',modelo'?',chassi='?',proprietario='?',dataCompra='?' "
-                + "WHERE placa = '?'";
+    public void update(Carro carro) throws SQLException{
+        String sql = "UPDATE carro SET placa=(?),dataCarro=(?),cor=(?),"
+                + "marca=(?),modelo=(?),chassi=(?),proprietario=(?),dataCompra=(?) "
+                + "WHERE placa=(?)";
         
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = con.prepareCall(sql);
-        
-        Carro carro = new Carro();
         
         try {
             stmt.setString(1, carro.getPlaca());
