@@ -8,7 +8,8 @@ package model.bean;
 import java.util.Date;
 
 /**
- *
+ * Essa classe  bean foi criada com intuito de servir para criação dos objetos a serem
+ * utilizados e armazenados no banco de dados
  * @author MaryR
  */
 public class Carro {

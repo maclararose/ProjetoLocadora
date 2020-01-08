@@ -243,6 +243,11 @@ public class BuscaPlaca extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 
+    /**
+     * No metodo a seguir, nos é retornado os dados do carro buscado
+     * @param evt 
+     */
+    
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         model.bean.Carro carro = new model.bean.Carro();
         CarroDAO dao = new CarroDAO();
