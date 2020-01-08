@@ -10,9 +10,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.bean.Carro;
 
 /**
@@ -115,38 +112,6 @@ public class CarroDAO {
             if (stmt != null) {
                 ConnectionFactory.closeConnection(con, stmt);
             } else {
-                ConnectionFactory.closeConnection(con);
-            }
-        }
-    }
-    
-    public void alterTable(String placa, Carro carro) throws SQLException{
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-       
-        try {
-            stmt = con.prepareStatement("UPDATE carro SET placa='?',dataCarro='?',cor='?',"
-                    + "marca='?',modelo'?',chassi='?',proprietario='?',dataCompra='?' "
-                    + "WHERE placa = '?'");
-            stmt.setString(1, placa);
-            
-            stmt.setString(1, carro.getPlaca());
-            stmt.setInt(2, carro.getAnoCarro());
-            stmt.setString(3, carro.getCor());
-            stmt.setString(4, carro.getMarca());
-            stmt.setString(5, carro.getModelo());
-            stmt.setString(6, carro.getChassi());
-            stmt.setString(7, carro.getProprietario());
-            stmt.setDate(8, new java.sql.Date(carro.getDataDaCompra().getTime()));
-                    
-            stmt.executeUpdate();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(CarroDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
-            if(stmt != null){
-                ConnectionFactory.closeConnection(con,stmt);
-            } else{
                 ConnectionFactory.closeConnection(con);
             }
         }
