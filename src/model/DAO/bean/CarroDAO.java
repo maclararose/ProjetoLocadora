@@ -75,7 +75,7 @@ public class CarroDAO {
         return carro;
     }
     
-    public void update(Carro carro) throws SQLException{
+    public void update(String placa, Carro carro) throws SQLException{
         String sql = "UPDATE carro SET placa=(?),dataCarro=(?),cor=(?),"
                 + "marca=(?),modelo=(?),chassi=(?),proprietario=(?),dataCompra=(?) "
                 + "WHERE placa=(?)";
@@ -92,6 +92,7 @@ public class CarroDAO {
             stmt.setString(6, carro.getChassi());
             stmt.setString(7, carro.getProprietario());
             stmt.setDate(8, new java.sql.Date(carro.getDataDaCompra().getTime()));
+            stmt.setString(9, placa);
             
             stmt.executeUpdate();
         } catch (SQLException ex) {
@@ -104,7 +105,7 @@ public class CarroDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("DELETE FROM carros WHERE placa = ?");
+            stmt = con.prepareStatement("DELETE FROM carro WHERE placa = (?)");
             stmt.setString(1, placa);
 
             stmt.executeUpdate();

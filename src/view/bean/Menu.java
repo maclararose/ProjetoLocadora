@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame {
         jiCadastro = new javax.swing.JMenuItem();
         jiListagem = new javax.swing.JMenuItem();
         jiExcluir = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -71,6 +72,15 @@ public class Menu extends javax.swing.JFrame {
 
         jiExcluir.setText("Excluir");
         jMenu1.add(jiExcluir);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setText("Alterar dados");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
 
@@ -121,7 +131,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jiListagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jiListagemActionPerformed
-        // TODO add your handling code here:
+        Listagem lista = new Listagem();
+        lista.setVisible(true);
     }//GEN-LAST:event_jiListagemActionPerformed
 
     private void jiCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jiCadastroActionPerformed
@@ -132,6 +143,11 @@ public class Menu extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        alterarDados alt = new alterarDados();
+        alt.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,6 +191,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jiCadastro;
     private javax.swing.JMenuItem jiExcluir;
     private javax.swing.JMenuItem jiListagem;
