@@ -234,6 +234,11 @@ public class Excluir extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * ao clicar no botão, irá retornar todos os dados encontrados do carro
+     * @param evt 
+     */
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         model.bean.Carro carro = new model.bean.Carro();
         CarroDAO dao = new CarroDAO();
@@ -264,15 +269,29 @@ public class Excluir extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPlacaConsultaActionPerformed
 
+    /**
+     * Essa função faz os formularios fecharem
+     * @param evt 
+     */
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 
+    /**
+     * Aqui abre-se uma nova janela de menu
+     * @param evt 
+     */
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         Menu menu = new Menu();
         menu.setVisible(true);
     }//GEN-LAST:event_btnMenuActionPerformed
 
+    /**
+     * Ao clicar no botão os dados do carro que foram encontrados
+     * serão apagados pelo metodo do dao, chamado delete
+     * @param evt 
+     */
+    
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         Carro carro = new Carro();
         CarroDAO dao = new CarroDAO();

@@ -71,6 +71,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jiListagem);
 
         jiExcluir.setText("Excluir");
+        jiExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jiExcluirActionPerformed(evt);
+            }
+        });
         jMenu1.add(jiExcluir);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
@@ -127,7 +132,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        Sobre sobre = new Sobre();
+        sobre.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jiListagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jiListagemActionPerformed
@@ -148,6 +154,11 @@ public class Menu extends javax.swing.JFrame {
         alterarDados alt = new alterarDados();
         alt.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jiExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jiExcluirActionPerformed
+        Excluir excluir = new Excluir();
+        excluir.setVisible(true);
+    }//GEN-LAST:event_jiExcluirActionPerformed
 
     /**
      * @param args the command line arguments

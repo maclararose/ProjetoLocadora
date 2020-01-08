@@ -261,6 +261,12 @@ public class alterarDados extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Nesse metodo, usamos o dao.update para quando alterarmos os dados
+     * eles subirem para o banco de dados, salvando-os
+     * @param evt 
+     */
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Carro carro = new Carro();
         CarroDAO dao = new CarroDAO();
