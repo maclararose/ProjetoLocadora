@@ -8,12 +8,7 @@ package view.bean;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.DAO.bean.CarroDAO;
@@ -270,13 +265,6 @@ public class alterarDados extends javax.swing.JFrame {
         Carro carro = new Carro();
         CarroDAO dao = new CarroDAO();
         
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
-        try {
-            Date data = formato.parse("23/11/2015");
-        } catch (ParseException ex) {
-            Logger.getLogger(Cadastro.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
         carro.setPlaca(txtPlaca.getText());
         carro.setAnoCarro(Integer.parseInt(txtAno.getText()));
         carro.setCor(txtCor.getText());
@@ -287,7 +275,9 @@ public class alterarDados extends javax.swing.JFrame {
         carro.setDataDaCompra(dpDataCompra.getDate());
         
         try {
-            dao.update(carro);
+            dao.update(txtConsulta.getText(), carro);
+            
+            System.out.println("Salvo!");
         } catch (SQLException ex) {
             Logger.getLogger(alterarDados.class.getName()).log(Level.SEVERE, null, ex);
         }
